@@ -58,3 +58,23 @@ tl2.to("#cheetos-bag",{
     rotate: "0deg"
 }, 'bag')
 
+
+// Add this at the end of the file
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('contact-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('contact-popup').style.display = 'block';
+    });
+
+    document.getElementById('close-popup').addEventListener('click', function() {
+        document.getElementById('contact-popup').style.display = 'none';
+    });
+
+    document.getElementById('contact-popup').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+});
+

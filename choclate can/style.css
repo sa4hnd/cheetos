@@ -1,9 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Grey+Qo&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: 'Cheetos';
+    src: url('path/to/cheetos-font.woff2') format('woff2'),
+         url('path/to/cheetos-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "EB Garamond", serif;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 html, body {
     height: 100%;
@@ -16,7 +24,7 @@ body::-webkit-scrollbar {
 
 #main {
     width: 100%;
-    height: 85vh;
+    min-height: 100vh;
 }
 
 nav {
@@ -26,7 +34,7 @@ nav {
     justify-content: space-between;
     width: 100%;
     height: 10vh;
-    padding: 0 2vw; /* Reduced padding */
+    padding: 0 2vw; /* Increased padding slightly */
     z-index: 99;
     background-color: #FF4500; /* Cheetos orange */
 }
@@ -34,30 +42,31 @@ nav {
 nav .logo {
     display: flex;
     align-items: center;
-    margin-right: auto; /* Push other items to the right */
 }
 
 nav .logo img {
-    height: 8vh; /* Adjust this value to make the logo bigger */
+    height: 9vh; /* Increased from 8vh */
     width: auto;
     max-width: none; /* Remove max-width constraint */
-}
-
-nav a, i {
-    font-size: 1.5vw;
-    text-decoration: none;
-    color: #fff;
 }
 
 .cntr-nav {
     display: flex;
     gap: 3vw;
-    margin-left: 2vw; /* Add some space between logo and nav items */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a, nav i {
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: #fff;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 nav i {
-    font-size: 1.5vw;
-    margin-left: 2vw; /* Add some space before the search icon */
+    margin-left: auto; /* Push search icon to the right */
 }
 
 .header {
@@ -71,7 +80,7 @@ nav i {
 
 .header h1 {
     font-size: 18vw;
-    font-family: "EB Garamond", serif;
+    font-family: 'Cheetos', cursive;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
@@ -148,6 +157,7 @@ nav i {
     color: #fff;
     font-size: 5vw;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Cheetos', cursive;
 }
 
 .about-right p {
@@ -161,7 +171,7 @@ nav i {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90vh;
+    min-height: 100vh;
     background-color: #FFF5E6; /* Light cream background */
 }
 
@@ -169,4 +179,99 @@ nav i {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF4500;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.popup-content h2 {
+    font-family: 'Cheetos', cursive;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.designer-credit {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.instagram-links h3 {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.instagram-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.instagram-links a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.instagram-links a:hover {
+    transform: scale(1.1);
+}
+
+.instagram-links i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#close-popup:hover {
+    transform: scale(1.1);
+}
+
+/* Add this to ensure no extra space at the bottom */
+body {
+    overflow-x: hidden;
 }

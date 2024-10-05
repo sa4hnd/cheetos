@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Cheetos Website</title>
 </head>
@@ -17,7 +18,7 @@
                 <a href="#">Home</a>
                 <a href="#">Flavors</a>
                 <a href="#">Shop</a>
-                <a href="#">Contact</a>
+                <a href="#" id="contact-link">Contact</a>
             </div>
             <i class="ri-search-line"></i>
         </nav>
@@ -46,5 +47,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <div id="contact-popup" class="popup">
+        <div class="popup-content">
+            <h2>Contact Us</h2>
+            <p class="designer-credit">Made and designed by Sahind Hamzani</p>
+            <div class="instagram-links">
+                <h3>Our Accounts</h3>
+                <a href="https://www.instagram.com/kurd.soft" target="_blank">
+                    <i class="ri-instagram-line"></i>
+                    <span>@kurd.soft</span>
+                </a>
+                <a href="https://www.instagram.com/sahhn.hamzani" target="_blank">
+                    <i class="ri-instagram-line"></i>
+                    <span>@sahhn.hamzani</span>
+                </a>
+            </div>
+            <button id="close-popup">&times;</button>
+        </div>
+    </div>
 </body>
 </html>
